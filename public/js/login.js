@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // TODO: create new place the user can go once they've loggedin.
-        document.location.replace('/user');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
