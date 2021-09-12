@@ -1,9 +1,6 @@
-const loginPage = async (event) => {
-    event.preventDefault();
-    document.location.replace('/login')
-}
 
-const signupFormHandler = async (event) => {
+async function signupFormHandler(event){
+// const signupFormHandler = async (event) => {
     event.preventDefault();
   
     const name = document.querySelector('#signupUsername').value.trim();
