@@ -48,7 +48,7 @@ router.put('/:id', withAuth, async (req, res) => {
     })
     .then((updatedComment) => {
         if (!updatedComment) {
-            res.status(404).json({ message: 'No Comment dound with this ID'});
+            res.status(404).json({ message: 'No Comment found with this ID'});
         }
         res.json(updatedComment);
       })
