@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
       
            res.status(200).json(blogData);
     } catch (err) {
-        res.status(450).json(err);
+        res.status(500).json(err);
     }
 })
 
