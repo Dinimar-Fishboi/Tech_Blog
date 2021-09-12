@@ -12,15 +12,13 @@
     <h1>
       Tech Blog
     </h1>
-    <!-- TODO: Add a comment describing the functionality of this helper -->
-    <!-- If the user is Logged in, then the logout button is available.--->
         <nav>
            <button class="button is-text" d="homeBtn">Home</button>
            <button class="button is-text" id="dashboardBtn">Dashboard</button>
     {{#if logged_in}}
            <button class="button is-text" id="logoutBtn">Logout</button>
     {{else}}
-           <button class="button is-text" id="loginBtn">Login</button>  
+           <button class="button is-text" id="loginBtn"><a href='/login'>Login</a></button>  
     {{/if}}
         </nav>
 
@@ -32,7 +30,6 @@
       
   </footer>
 
-  <!-- TODO: Add a comment describing the functionality of this helper -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
