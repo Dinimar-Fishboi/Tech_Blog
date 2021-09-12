@@ -12,10 +12,11 @@ Comment.init(
         autoIncrement: true,
     
         }, 
-    created_at: {
-        type: DataTypes.DATE,
-        defaultValue: sequelize.DATE
-    },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
         blog_id: {
             type: DataTypes.INTEGER,      
             references: {
