@@ -1,6 +1,5 @@
 
 async function signupFormHandler(event){
-// const signupFormHandler = async (event) => {
     event.preventDefault();
   
     const name = document.querySelector('#signupUsername').value.trim();
@@ -19,11 +18,11 @@ async function signupFormHandler(event){
         if (response.ok) {
             document.location.replace('/user');
         } else {
-            alert(response.statusText);
+            console.log(response.statusText);
         }
         }
     } else {
-        console.alert("Passwords don't match. Please ensure passwords match to sign up")
+        console.log("Passwords don't match. Please ensure passwords match to sign up")
     }
     
   };
