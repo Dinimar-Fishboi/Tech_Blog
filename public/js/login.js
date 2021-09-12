@@ -15,6 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // TODO: create new place the user can go once they've loggedin.
+        console.log(response);
         document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
@@ -28,6 +29,6 @@ const signupPage = async (event) => {
     document.location.replace('/signup')
 }
 
-  document.querySelector('#loginBtn').addEventListener('submit', loginFormHandler);
+  document.querySelector('#loginForm').addEventListener('submit', loginFormHandler);
   document.querySelector('#signupBtn').addEventListener('submit', signupPage);
  
