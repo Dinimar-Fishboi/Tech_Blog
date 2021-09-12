@@ -1,5 +1,19 @@
 <h1>Your Dashboard</h1>
 
 <!---Add User's content here-->
+{{#each blogs as |blog| }}
+<div class="card">
+    <header class="card-header">
+    <p class="card-header-title">
+        {{blog.title}}
+    </p>
+  <div class="card-content">
+    <div class="content">
+        {{blog.content}}
+    </div>
+    
+  </div>
+</div>
+{{/each}}
 
 <button class="button is-text" id="createBlog"><a href="/create-blog">Add new Post</a></button>
