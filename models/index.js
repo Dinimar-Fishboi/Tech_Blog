@@ -4,21 +4,38 @@ const Blog = require('./Blog');
 
 //User can have many Blog (posts)
 User.hasMany(Blog, {
-    constraints:false,
+   // constraints:false,
    foreignKey: 'user_id',
 })
 
 //A Blog (post) will only belong to one User
-Blog.hasOne(User, {
-    constraints:false,
+Blog.belongsTo(User, {
+    // constraints:false,
    foreignKey: "user_id",
+   onDelete: "cascade"
 })
 
 //A Blog may have many Comments
 Blog.hasMany(Comment, {
-    constraints:false,
+    // constraints:false,
 
    foreignKey: 'blog_id',
+   onDelete: 'cascade'
+})
+
+Comment.belongsTo(Blog, {
+    foreignKey: 'blog_id',
+    onDelete: 'cascade'
+})
+
+User.hasMany( Comment, {
+    foreignKey: 'user_id',
+    onDelete: "cascade"
+})
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: "cascade"
 })
 
 module.exports = { User, Comment, Blog};
