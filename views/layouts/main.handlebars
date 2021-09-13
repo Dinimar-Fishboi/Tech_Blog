@@ -17,7 +17,6 @@
            <button class="button is-text" id="dashboardBtn"><a href='/dashboard'>Dashboard</a></button>
     {{#if logged_in}}
            <button class="button is-text" id="logoutBtn">Logout</button>
-           <p>Hi {{req.session.user.username}}</p>
     {{else}}
            <button class="button is-text" id="loginBtn"><a href='/login'>Login</a></button>  
     {{/if}}
