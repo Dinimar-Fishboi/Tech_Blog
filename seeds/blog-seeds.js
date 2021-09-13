@@ -14,7 +14,7 @@ const blogData = [
     {
       title: "Roll 'Em Up",
       content: "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-      user_id: 4
+      user_id: 3
     }
   ]
 
