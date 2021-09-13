@@ -26,4 +26,8 @@ router.get('/', withAuth, async (req, res) => {
     }
 })
 
+router.get('/create-blog', (req,res) => {
+    res.render('create-blog');
+})
+
 module.exports = router
