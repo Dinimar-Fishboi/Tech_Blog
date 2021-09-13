@@ -4,14 +4,14 @@
 {{#each blogs as |blog| }}
 <div class="card">
     <header class="card-header">
-    <p class="card-header-title">
-        {{blog.title}}
+    <p class="card-header-title column is-one-fifth">
+        {{blog.title}} 
     </p>
   <div class="card-content">
     <div class="content">
         {{blog.content}}
     </div>
-    
+    <p><a href="/dashboard/blog-update">Update/Delete Post</a></p>
   </div>
 </div>
 {{/each}}

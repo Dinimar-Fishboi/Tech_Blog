@@ -1,14 +1,18 @@
 {{#each blogs as |blog| }}
 <div class="card">
     <header class="card-header">
-    <p class="card-header-title">
-        {{blog.title}} submitted by {{user.username}} on {{blog.date_created}}
+    <p class="card-header-title column is-one-fifth">
+        {{blog.title}}
+    </p>
+    <p class="column is-one-fifth">
+      submitted by {{user.username}} on {{blog.date_created}}
     </p>
   <div class="card-content">
     <div class="content">
         {{blog.content}}
     </div>
-    
+        <p><a href="/dashboard/add-comment">Add/View Comment</a></p>
+
   </div>
 </div>
 {{/each}}
