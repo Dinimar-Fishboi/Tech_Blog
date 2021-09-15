@@ -18,7 +18,9 @@ router.get('/:id', async (req, res) => {
         const blogData = await Blog.findByPk(req.params.id, {
             include: [{ model: User},  {model: Comment}]
           })
-      
+           console.log(blogData)
+           const blog = blogData.get({plain: true});
+           res.render('blog-post-info', blog)
            res.status(200).json(blogData);
     } catch (err) {
         res.status(500).json(err);

@@ -2,9 +2,12 @@ async function addNewComment(event){
     event.preventDefault();
   
     const content = document.querySelector('#commentInput').value.trim();
-  
-    console.log(content);
 
+    //TODO create 
+   // const blog_id = 
+
+    console.log(content);
+    //console.log(blog_id);
    
         const response = await fetch('/api/comments', {
             method: 'POST',
@@ -14,9 +17,10 @@ async function addNewComment(event){
     
         if (response.ok) {
             console.log(response);
-            // document.location.replace('/dashboard');
+            // document.location.reload
         } else {
             console.log(response.statusText);
+
         }
     
   };
