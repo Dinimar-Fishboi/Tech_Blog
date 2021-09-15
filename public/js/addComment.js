@@ -3,21 +3,21 @@ async function addNewComment(event){
   
     const content = document.querySelector('#commentInput').value.trim();
 
-    //TODO create 
-   // const blog_id = 
+    const pathname = window.location.pathname.split('/');
+    const blog_id = pathname[2];
+    console.log('the blog_id is ' + blog_id);
 
     console.log(content);
-    //console.log(blog_id);
    
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body: JSON.stringify({ content }),
+            body: JSON.stringify({ content, blog_id }),
             headers: { 'Content-Type': 'application/json' },
         });
     
         if (response.ok) {
             console.log(response);
-            // document.location.reload
+             document.location.reload
         } else {
             console.log(response.statusText);
 
