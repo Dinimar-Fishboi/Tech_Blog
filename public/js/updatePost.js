@@ -1,9 +1,11 @@
 const updateBlog = async (event) => {
 
-    // event.preventDafault();
+    event.preventDefault();
 
     const title = document.querySelector('#titleInput').value.trim();
     const content = document.querySelector('#contentInput').value.trim();
+    const pathname = window.location.pathname.split('/');
+    const id = pathname[3];
 
     console.log(title);
     console.log(content);
@@ -27,7 +29,7 @@ debugger
 
 const delBlogPost = async (event) => {
       
-    // event.preventDafault();
+    // event.preventDefault();
       const pathname = window.location.pathname.split('/');
       const id = pathname[3];
             console.log(id)
