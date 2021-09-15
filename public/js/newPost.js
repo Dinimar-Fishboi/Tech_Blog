@@ -7,7 +7,6 @@ async function addNewPost(event){
     console.log(title);
     console.log(content);
 
-   
         if (title && content) {
         const response = await fetch('/api/blogs', {
             method: 'POST',

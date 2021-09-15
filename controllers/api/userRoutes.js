@@ -95,6 +95,7 @@ router.post('/login', async (req, res) => {
       });
     } else {
       res.status(404).end();
+      console.log("There is no session")
     }
   });
   

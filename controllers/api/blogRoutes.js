@@ -44,6 +44,7 @@ router.post('/', withAuth, async (req, res) => {
     Blog.update(req.body, {
         where: {
             id: req.params.id,
+            user_id: req.session.user_id,
         }
     })
     .then((updatedBlog) => {
