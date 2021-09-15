@@ -5,10 +5,11 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const commentData = await Comment.findAll({
-            include: [{ model: User},  {model: Blog}]
+             include: [{ model: User},  {model: Blog}],
+             order: ['date_created', 'DESC']
           })
           
-      //    const comments = commentData.map((comment) => comment.get({plain: true}))
+         const comments = commentData.map((comment) => comment.get({plain: true}))
            res.status(200).json(commentData);
     } catch (err) {
         res.status(450).json(err);

@@ -9,7 +9,10 @@ router.get('/', withAuth, async (req, res) => {
                 user_id: req.session.user_id
             },
             include: [{
-                model: Comment
+                model: Comment,
+                include: {
+                    model: User
+                }
             }]
         })
 
@@ -28,6 +31,25 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/create-blog', (req,res) => {
     res.render('create-blog');
+})
+
+router.get('/blog-update/:id', withAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findOne({
+            where :{
+                id: req.params.id
+            },
+            include: [{ model: User}, { model: Comment }]
+        })
+
+        const blog = blogData.get({ plain: true });
+
+        res.render('blog-update', blog)
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
 })
 
 module.exports = router
