@@ -45,8 +45,7 @@ router.get('/', async (req, res) => {
 
   // When selecting a Blog-Post to add a comment
   router.get('/blog-post-info/:id', withAuth, async (req,res) => {
-      //TODO find blog_id for specifc blog-post to render
-        try {
+    try {
             const blogData = await Blog.findByPk(req.params.id, {
                 include: [{ model: User},  {model: Comment, include: { model: User, attributes: ['username']}}]
               })
