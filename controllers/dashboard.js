@@ -44,7 +44,7 @@ router.get('/blog-update/:id', withAuth, async (req, res) => {
 
         const blog = blogData.get({ plain: true });
 
-        res.render('blog-update', blog)
+        res.render('blog-update', {blog, logged_in: true })
 
     } catch (err) {
         console.log(err)

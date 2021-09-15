@@ -11,11 +11,12 @@
         <textarea class="textarea" id="contentInput" placeholder="Textarea" value="{{content}}"></textarea>
     </div>
 
-    <button class="button is-primary" id="updateBlogBtn">Update Post</button>
-    <button class="button is-danger" id="deleteBlogBtn" data-id="{{id}}">Delete Post</button>
-    <button class="button is-warning" id="returnBtn"><a href='/dashboard'>Return to Dashboard</a></button>
-        
+    <button class="button is-primary" type="submit" id="updateBlogBtn">Update Post</button>
+   
     </div>
 </form>
+<br>
+    <button class="button is-danger" type="button" id="deleteBlogBtn" data-id="{{id}}">Delete Post</button>
+    <button class="button is-warning" id="returnBtn"><a href='/dashboard'>Return to Dashboard</a></button>
 
 <script src="/js/updatePost.js"></script>
