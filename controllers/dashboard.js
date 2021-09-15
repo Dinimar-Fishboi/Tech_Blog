@@ -39,12 +39,12 @@ router.get('/blog-update/:id', withAuth, async (req, res) => {
             where :{
                 id: req.params.id
             },
-            include: [{ model: User}, { model: Comment }]
+            include: [{ model: User}, { model: Comment }],
         })
 
         const blog = blogData.get({ plain: true });
 
-        res.render('blog-update', {blog, logged_in: true })
+        res.render('blog-update', blog)
 
     } catch (err) {
         console.log(err)

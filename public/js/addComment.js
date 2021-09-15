@@ -5,6 +5,11 @@ async function addNewComment(event){
 
     const pathname = window.location.pathname.split('/');
     const blog_id = pathname[2];
+
+    const user_id = sessionStorage.user_id;
+
+    console.log(user_id)
+
     console.log('the blog_id is ' + blog_id);
 
     console.log(content);
@@ -17,7 +22,7 @@ async function addNewComment(event){
     
         if (response.ok) {
             console.log(response);
-             document.location.reload
+             document.location.reload();
         } else {
             console.log(response.statusText);
 

@@ -16,10 +16,10 @@ const updateBlog = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         console.log(response)
-debugger
+
         if (response.ok) {
           console.log("Post has been updated")
-         // document.location.replace('/dashboard');
+         document.location.replace('/dashboard');
         } else {
           console.log("Post has not been updated")
 

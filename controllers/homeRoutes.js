@@ -48,7 +48,7 @@ router.get('/', async (req, res) => {
       //TODO find blog_id for specifc blog-post to render
         try {
             const blogData = await Blog.findByPk(req.params.id, {
-                include: [{ model: User},  {model: Comment}]
+                include: [{ model: User},  {model: Comment, include: { model: User, attributes: ['username']}}]
               })
               
               const blog = blogData.get({ plain: true });
