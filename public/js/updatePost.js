@@ -8,14 +8,13 @@ const updateBlog = async (event) => {
     console.log(title);
     console.log(content);
 
-  console.debug("Pausing code");
-  debugger
         const response = await fetch(`/api/blogs/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' },
         });
-
+        console.log(response)
+debugger
         if (response.ok) {
           console.log("Post has been updated")
          // document.location.replace('/dashboard');
