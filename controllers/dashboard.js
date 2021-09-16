@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//When user is logged in, they can see all posts they've made
 router.get('/', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findAll({
@@ -29,10 +30,13 @@ router.get('/', withAuth, async (req, res) => {
     }
 })
 
+
+// Renders the create-blog.handlebars file 
 router.get('/create-blog', (req,res) => {
     res.render('create-blog');
 })
 
+// Retrives the 'blog-update' page with the selected blog information rendered.
 router.get('/blog-update/:id', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findOne({

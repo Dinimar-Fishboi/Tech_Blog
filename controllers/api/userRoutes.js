@@ -30,6 +30,7 @@ router.get('/:id', async (req, res) =>{
     }
 })
 
+//When signing up for the first time.
 router.post('/', async (req, res) => {
     console.log(req.body)
     try {
@@ -52,6 +53,7 @@ router.post('/', async (req, res) => {
     }
   });
 
+  // When an old user returns
 router.post('/login', async (req, res) => {
     try {
       // Find the user who matches the posted username
@@ -87,6 +89,7 @@ router.post('/login', async (req, res) => {
     }
   });
   
+  //Logs the user out.
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       // Remove the session variables

@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
     }
   });
 
+  //If user is already logged in, they are redirected to homepage
   router.get('/login', (req, res) => {
       if (req.session.logged_in) {
           res.redirect('/');
@@ -35,6 +36,7 @@ router.get('/', async (req, res) => {
       res.render('login');
   })
 
+    //If user is already logged in, they are redirected to homepage
   router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -50,6 +52,7 @@ router.get('/', async (req, res) => {
                 include: [{ model: User},  {model: Comment, include: { model: User, attributes: ['username']}}]
               })
               
+              //When the relevan blog selected gets loaded into 'blog-post-info'
               const blog = blogData.get({ plain: true });
               res.render('blog-post-info', blog);
 

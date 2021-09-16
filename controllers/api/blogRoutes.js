@@ -27,6 +27,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// Adds new blog-posts with user_id coming from the session.
 router.post('/', withAuth, async (req, res) => {
     try {
       const newBlog = await Blog.create({
@@ -40,6 +41,7 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  // Updates blog-posts with user_id coming from the session.
   router.put('/:id', withAuth, async (req, res) => {
     Blog.update(req.body, {
         where: {
@@ -58,6 +60,7 @@ router.post('/', withAuth, async (req, res) => {
       res.status(500).json(err));
 })
 
+// Deletes  blog-posts where user_id coming from the session.
   router.delete('/:id', withAuth, async (req, res) => {
     try {
       const blogData = await Blog.destroy({

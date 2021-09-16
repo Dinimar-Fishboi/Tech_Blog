@@ -22,7 +22,7 @@ const updateBlog = async (event) => {
          document.location.replace('/dashboard');
         } else {
           console.log("Post has not been updated")
-
+          window.alert("Post failed to update - try loggin in again")
           alert('Failed to update project');
         }
 }

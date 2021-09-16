@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment, User, Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
 router.get('/', async (req, res) => {
     try {
         const commentData = await Comment.findAll({
@@ -28,6 +29,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// When logged in- can post a new comment on blog's post info page.
 router.post('/', withAuth, async (req, res) => {
     try {
       const newComment = await Comment.create({
